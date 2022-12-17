@@ -1,11 +1,12 @@
 package studentCode;
 
-import java.util.Objects;
 import javafx.stage.Stage;
 import professorCode.IOManager;
 import professorCode.TurnParserV2;
 import sharedCode.AddLocation;
 import sharedCode.SharedGameData;
+
+import java.util.Objects;
 
 public class GhostSkeleton implements Runnable{
 
@@ -38,14 +39,14 @@ public class GhostSkeleton implements Runnable{
 		/*
 		 * Add you custom code for initialization of your classes below
 		 */
-		this.fileManager = null;//Add your FileManager from the last project here
+		this.fileManager = new FileManager(this.sharedFilePath);//Add your FileManager from the last project here
 
-		this.dictionary = null; //Add your Dictionary from the last project here
+		this.dictionary = new Dictionary(this.sharedFilePath,this.fileManager); //Add your Dictionary from the last project here
 
-		this.ioManager = null; //Add your IoManager here
+		this.ioManager = new MyIOManager<>(); //Add your IoManager here
 		this.ioManager.setPath(this.sharedFilePath);
 
-		this.turnParser = null; //Add your Turn Parser here
+		this.turnParser = new MyTurnParser(); //Add your Turn Parser here
 
 		this.gameManager = new GameManager(this.primaryStage, this.ioManager, this.myTeamName, this.minWordLength, this.dictionary);
 	}

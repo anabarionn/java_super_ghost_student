@@ -25,7 +25,7 @@ public class MyTurnParser implements TurnParserV2 {
         return
                 //Its someone's turn
                 isTurn(shareGameData) &&
-                        //The reciever of the state == my team name
+                        //The receiver of the state == my team name
                         shareGameData.getGameState().getReceiver().equalsIgnoreCase(myTeamName) &&
                         //Check to make sure the current game action is empty
                         (shareGameData.gameActions().isEmpty() ||

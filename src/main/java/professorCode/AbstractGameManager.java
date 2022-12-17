@@ -5,6 +5,7 @@ import sharedCode.AddLocation;
 import sharedCode.GameAction;
 import sharedCode.SharedGameData;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public abstract class AbstractGameManager <D extends  AbstractDictionary, T extends TurnParserV2> {
@@ -41,7 +42,7 @@ public abstract class AbstractGameManager <D extends  AbstractDictionary, T exte
      *
      * @param fragment The current ordered collection of letters that have been played in the game.
      */
-    public abstract void onTurn(String fragment);
+    public abstract void onTurn(String fragment) throws IOException;
 
     /**
      * This method is invoked immediately after your onTurn function has successfully completed. This is
@@ -59,7 +60,7 @@ public abstract class AbstractGameManager <D extends  AbstractDictionary, T exte
      * function when it is your turn or else your application will be writing information when it is not your
      * turn. Call this function in your button listener.
      *
-     * @param TurnData An object that contains information about letter and location you would like to play.
+     * @param turnData An object that contains information about letter and location you would like to play.
      */
     public void submitTurn(TurnData turnData){
         try{

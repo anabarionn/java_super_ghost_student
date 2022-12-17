@@ -1,10 +1,11 @@
 package studentCode;
 
-import java.io.IOException;
-import java.util.Set;
 import professorCode.AbstractDictionary;
+
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 
 
@@ -16,6 +17,8 @@ public class Dictionary extends AbstractDictionary {
         super(path, dictionaryFileReader);
         set = getAllWords();
     }
+
+
 
     @Override
     public int countWordsThatStartWith(String prefix, int size, boolean ignoreCase) throws IllegalArgumentException {

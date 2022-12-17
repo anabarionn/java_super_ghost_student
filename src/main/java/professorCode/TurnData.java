@@ -38,7 +38,7 @@ public class TurnData {
         return new TurnData(letter, addFront);
     }
 
-    private TurnData (char letter, boolean addFront) {
+    public TurnData(char letter, boolean addFront) {
 
         this.letter = letter;
 
